@@ -4,7 +4,7 @@
 
 MERN stack is a collection of technologies that enables faster application development. It is used by developers worldwide. The main purpose of using MERN stack is to develop apps using JavaScript only. This is because the four technologies that make up the technology stack are all JS-based.
 
-The four technologies are
+The four technologies are:
 
 - MongoDB : This is document-based, No-SQL database used to store application data in a form of documents.
 - ExpressJS:  This is a server-side Web Application framework for Node.js.
@@ -23,8 +23,8 @@ Lets get the show on the road 🏋️‍♀️😊
 # Step 1.
 - Sign in to AWS free tier account
 -  Launch a new EC2 Instance
--  t2.nano family with Ubuntu Server 22.04 LTS (HVM) image.
--  Create and download a key pair (a .pem key) for conection to the account
+-  t2.micro family with Ubuntu Server 22.04 LTS (HVM) image.
+-  Create and download a key pair (a .pem key) for connection to the account
 -  Launch instance
 - Connect to your instance with your .pem key.
 
@@ -32,7 +32,7 @@ Lets get the show on the road 🏋️‍♀️😊
 
 - Update ubuntu: `sudo apt update`
 - Upgrade ubuntu:  `sudo apt upgrade`
--  Get the location of Node.js software from [Ubuntu repositories](https://github.com/nodesource/distributions#deb) This command will load the Node source.
+- Get the location of Node.js software from [Ubuntu repositories](https://github.com/nodesource/distributions#deb) This command will load the Node source.
 
 `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
 
@@ -42,10 +42,11 @@ Lets get the show on the road 🏋️‍♀️😊
 
 ![NodeJS](./images/nodejs-installed.png)
 
-The command above installs both nodejs and npm. NPM is a package manager for Node like apt for Ubuntu, it is used to install Node modules & packages and to manage dependency conflicts.
+The command above installs both ***nodejs*** and ***npm.***  NPM is a package manager for Node like apt for Ubuntu, it is used to install Node modules & packages and to manage dependency conflicts.
 Verify the node installation with the command below:
 
 `node -v`
+
 ![Node-v](./images/node-version.png)
 
 Verify the npm installation with the command below:
@@ -64,10 +65,14 @@ To verify that the Todo directory is created run :
 
 `ls`
 
- P.S In order to see some more useful information about files and directories, you can use following combination of keys `ls -lih` 
+ P.S In order to see some more useful information about files and directories, you can use following combination of keys: 
+ 
+ `ls -lih` 
  
  - It will show you different properties and size in human readable format. 
- - You can learn more about different useful keys for ls command with `ls --help`.
+ - You can learn more about different useful keys for ls command with:
+ 
+  `ls --help`.
 
 Now change your current directory to the newly created one:
 
@@ -82,16 +87,16 @@ You should press the Enter  key several times to accept default values, then acc
 
 ![Npm-init](./images/npm-init.png) 
 
-Run the command `ls` to confirm that you have package.json file created.
+Run the command `ls` to confirm that you have ***package.json*** file created.
 
 ![pckge-json](./images/package-json.png)
 
 If you do not see the output above, kindly go back and retake all the steps.
 
-# step 3. Install ExpressJS
+# Step 3. Install ExpressJS
 
-- Install, ExpressJs next and create the Routes directory.
-Express is a framework for Node.js, therefore a lot of things developers would have programmed  already comes pre-installed. This singular situation, simplifies development, and abstracts a lot of low-level details. For example, Express helps to define routes of your application based on HTTP methods and URLs.
+- Install, ***ExpressJs*** next and create the ***Routes directory***.
+Express is a framework for ***Node.js***, therefore a lot of things developers would have programmed  already comes pre-installed. This singular situation, simplifies development, and abstracts a lot of low-level details. For example, Express helps to define routes of your application based on ***HTTP*** methods and ***URLs***.
 
 - To use express, install it using npm:
 
@@ -101,7 +106,7 @@ Express is a framework for Node.js, therefore a lot of things developers would h
 
 `touch index.js`
 
-- Run `ls` to confirm that your index.js file has been successfully created
+- Run `ls` to confirm that your ***index.js*** file has been successfully created
 
 # Install the dotenv module 
 
@@ -109,11 +114,11 @@ Express is a framework for Node.js, therefore a lot of things developers would h
 
 `npm install dotenv`
 
-- Open the index.js file with the command below:
+- Open the ***index.js*** file with the command below:
 
 `nano index.js`
 
-paste the following code in the editor:
+Paste the following code in the editor:
 
 ```
 const express = require('express');
@@ -139,7 +144,7 @@ console.log(`Server running on port ${port}`)
 
 ```
 Notice that we have specified to use port 5000 in the code. This will be required later when we go on the browser.
-Now it is time to start our server to see if it works. Open your terminal in the same directory as your index.js file and type:
+Now it is time to start our server to see if it works. Open your terminal in the same directory as your ***index.js*** file and type:
 
 `node index.js`
 
@@ -197,7 +202,7 @@ For each task, we need to create ***routes*** that will define various endpoints
 
 `cd routes`
 
-Now, create a file api.js with the command below
+Now, create a file api.js with the command below:
 
 `touch api.js`
 
@@ -228,15 +233,15 @@ module.exports = router;
 
 # Creating  Models directory.
 
-Because the app is going to  use  Mongodb which is a NoSQL database, we need to create a model.
+Because the app is going to  use  Mongodb which is a ***NoSQL*** database, we need to create a model.
 A model is at the heart of JavaScript based applications, and it is what makes it interactive.
 We will also use models to define the database schema . This is important so that we will be able to define the fields stored in each Mongodb document. 
 The Schema is a blueprint of how the database will be constructed, including other data fields that may not be required to be stored in the database. These are known as virtual properties
-To create a Schema and a model, install mongoose which is a Node.js package that makes working with mongodb easier.
+To create a Schema and a model, install mongoose which is a ***Node.js*** package that makes working with mongodb easier.
 
 - To change directory back Todo folder  run:
  
- `cd ..` and install Mongoose with:
+    `cd ..` and install Mongoose with:
 
  `npm install mongoose`
 
@@ -280,7 +285,10 @@ module.exports = Todo;
 Now we need to update our routes from the file api.js in ‘routes’ directory to make use of the new model.
 
 -In Routes directory, open api.js with
- `nano api.js` delete the code inside and paste the code below into it then save and exit:
+ 
+ `nano api.js`
+ 
+  delete the code inside and paste the code below into it then save and exit:
 
  ```
  const express = require ('express');
@@ -379,19 +387,19 @@ you will need to sign up for a shared clusters free account, which is ideal for 
 
  ![database](./images/connection%20string.png)
 
-In the **index.js*** file, we specified process.env to access environment variables, but we have not yet created this file. So we need to do that now.
+In the ***index.js*** file, we specified ***process.env*** to access environment variables, but we have not yet created this file. So we need to do that now.
 
-- Create a file in your Todo directory and name it .env run:
+- Create a file in your Todo directory and name it ***.env*** run:
 
 `touch .env`
 
-`nano .env
+`nano .env`
 
 - Paste your connection string. 
 
 - Save and close
 
-Now we need to update the index.js to reflect the use of .env so that Node.js can connect to the database.
+Now we need to update the ***index.js*** to reflect the use of ***.env*** so that ***Node.js*** can connect to the database.
 Simply delete existing content in the file, and update it with the entire code below.
 
 `nano index.js` (delete the previous content and type in the code below)
@@ -436,7 +444,7 @@ console.log(`Server running on port ${port}`)
 });
 ```
 
-Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
+Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the ***index.js*** application file.
 
 Run:
 
@@ -530,13 +538,13 @@ In Todo directory, open the ***package.json*** file. Change the highlighted part
 - Add the key value pair in the package.json file
 
 ```
-"proxy": "http://localhost:5000"
+"proxy": `http://localhost:5000`
 
 ```
 
 ![proxy](./images/IMG-20221216-WA0022.jpg) 
 
-The purpose of adding the proxy configuration  is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
+The purpose of adding the proxy configuration  is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like `http://localhost:5000/api/todos`
 
 
 -   Ensure you are inside the Todo directory, and simply run:
